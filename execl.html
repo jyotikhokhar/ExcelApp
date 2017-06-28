@@ -1,0 +1,79 @@
+<!-- 
+Author: Jyoti Rani
+
+Simple Excel Sheet application
+
+Features:
+
+	1. Add/Remove columns/rows
+	2. resize rows by draging the first column
+	3. resize column by draging the header
+	4. Text manipulation in cell - bold (ctrl + b), italic (ctrl + i) and underline (ctrl + u) using keyboard shortcuts
+	5. Copy (ctrl + c) & paste (ctrl + v) multiple cells data at a time either by keyboard shortcuts or by buttons provided
+	6. Auto saved data using local storage to prevent data loss after every 30 seconds.
+	7. Export data to CSV & JSON formats
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="main.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+</head>
+
+<body>
+	
+	<div class="navbar">
+		<button type="button" id="json">Export to JSon</button>
+		<button type="button" id="csv">Export to CSV</button>
+		<button type="button" id="copy" disabled>Copy</button>
+		<button type="button" id="paste" disabled>Paste</button>
+		<button type="button" id="saveData">Save Data</button>
+		<span id="savedAt" style="float:right;color:green"></span>
+	</div>
+	<br/><br/>
+	<div id="dataTable">
+	<table id="excel-table" class="ui-widget-content">
+		<tr>
+			<th><span><p>SNo</p>
+				<div class="dropdown">
+				   <i title ="Add Col"class="fa fa-plus-circle fa-lg addCol"></i>
+				   <i title ="Add Row"class="fa fa-plus-circle  fa-lg addRow"></i>
+				</div>
+				</span>
+			</th>
+			<th><span><p>A</p>
+				<div class="dropdown">
+				   <i title ="Add Col"class="fa fa-plus-circle fa-lg addCol"></i>       
+				   <i title = "Remove Col"class="fa fa-minus-circle fa-lg removeCol"></i>
+				</div>
+				</span>
+			</th>
+			<th><span><p>B</p>
+			       <div class="dropdown">
+				   <i title ="Add Col"class="fa fa-plus-circle fa-lg addCol"></i>       
+				   <i title = "Remove Col"class="fa fa-minus-circle fa-lg removeCol"></i>
+				</div>
+			</span>
+			</th>
+		</tr>
+		<tr>
+			<td><span><p>1</p><div class="dropdown"><i title ="Add Row"class="fa fa-plus-circle fa-lg addRow"></i><i title = "Remove Row"class="fa fa-minus-circle fa-lg removeRow"></i></div></span></td>
+			<td contentEditable="true"></td>
+			<td contentEditable="true"></td>
+		</tr>
+		<tr>
+			<td><span><p>2</p><div class="dropdown"><i title ="Add Row"class="fa fa-plus-circle  fa-lg addRow"></i><i title = "Remove Row"class="fa fa-minus-circle fa-lg removeRow"></i></div></span></td>
+			<td contentEditable="true">sd</td>
+			<td contentEditable="true">sd</td>
+		</tr>
+	</table>
+	</div>
+	
+	<!--- <textarea id="jsonData"></textarea>
+	<textarea id="csvData"></textarea>-->
+	<script src="custom.js"></script> 
+</body>
+</html>
